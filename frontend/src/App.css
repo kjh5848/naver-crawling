@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 커스텀 스타일 */
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 포커스 상태 개선 */
+.focus-visible:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* 버튼 호버 효과 */
+.btn-primary {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-all duration-200;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-200;
+}
+
+/* 카드 스타일 */
+.card {
+  @apply bg-white rounded-xl shadow-sm border;
+}
+
+.card-header {
+  @apply p-6 border-b;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+/* 상태 표시 색상 */
+.status-pending {
+  @apply text-yellow-600 bg-yellow-50;
+}
+
+.status-running {
+  @apply text-blue-600 bg-blue-50;
+}
+
+.status-completed {
+  @apply text-green-600 bg-green-50;
+}
+
+.status-failed {
+  @apply text-red-600 bg-red-50;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 반응형 그리드 */
+.grid-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* 블로그 상세 페이지 스타일 */
+.blog-detail-content {
+  @apply prose max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed;
+}
+
+.blog-detail-content img {
+  @apply rounded-lg shadow-sm max-w-full h-auto;
+}
+
+.blog-detail-content p {
+  @apply mb-4;
+}
+
+.blog-detail-content h1, 
+.blog-detail-content h2, 
+.blog-detail-content h3, 
+.blog-detail-content h4, 
+.blog-detail-content h5, 
+.blog-detail-content h6 {
+  @apply mt-6 mb-3 font-semibold text-gray-900;
+}
+
+.blog-detail-content blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic text-gray-600 bg-blue-50 py-2 rounded-r-lg;
+}
+
+.blog-detail-content ul,
+.blog-detail-content ol {
+  @apply ml-6 mb-4;
+}
+
+.blog-detail-content li {
+  @apply mb-1;
+}
+
+.blog-detail-content a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.blog-detail-content code {
+  @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-sm;
+}
+
+.blog-detail-content pre {
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto text-sm;
+}
+
+/* 포스트 목록 스타일 */
+.post-list-item {
+  @apply transition-all duration-200 hover:shadow-sm;
+}
+
+.post-list-item.active {
+  @apply bg-blue-50 border-l-4 border-l-blue-500 shadow-sm;
+}
+
+/* 이미지 갤러리 스타일 */
+.image-gallery {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.image-gallery-item {
+  @apply relative overflow-hidden rounded-lg border shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+.image-gallery-item img {
+  @apply w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105;
+}
+
+.image-gallery-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center;
+}
+
+.image-gallery-overlay a {
+  @apply opacity-0 group-hover:opacity-100 bg-white text-gray-700 px-3 py-2 rounded-lg shadow-lg text-sm font-medium transition-all duration-300 hover:bg-gray-50;
+}
+
+/* Sticky 헤더 스타일 */
+.sticky-header {
+  @apply sticky top-0 z-10 bg-white border-b shadow-sm;
+}
+
+/* 로딩 스타일 */
+.loading-spinner {
+  @apply animate-spin w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full;
+}
+
+/* 텍스트 잘림 스타일 */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 메타 정보 스타일 */
+.meta-info {
+  @apply text-sm text-gray-600 flex items-center space-x-2;
+}
+
+.meta-info svg {
+  @apply w-4 h-4 flex-shrink-0;
+}
+
+/* 태그 스타일 */
+.tag {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800;
+}
+
+.tag-blue {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.tag-green {
+  @apply bg-green-100 text-green-800;
+}
+
+.tag-yellow {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.tag-red {
+  @apply bg-red-100 text-red-800;
+}
