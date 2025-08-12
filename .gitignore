@@ -89,6 +89,14 @@ backend/temp_downloads/
 test_*.json
 test_*.py
 
+# Cleanup - removed files
+main.py.fixed
+debug_routes.py
+scraper_async.py
+test_async.py
+simple_test.py
+App.tsx
+
 # Logs
 *.log
 logs/
@@ -108,3 +116,6 @@ nul
 
 # MCP configuration
 .mcp.json
+
+# Legacy code (archived)
+legacy/
